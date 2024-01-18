@@ -20,3 +20,15 @@ function theme_enqueue_styles()
     //  Chargement du style personnalisé pour le theme
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 }
+
+
+/******* EMPLACEMENT MENU WP *******/
+function register_my_menus()
+{
+    register_nav_menus(
+        array(
+            'main-menu' => __('menu desktop'),
+            'footer-menu'  => __('menu footer'),
+        )
+    );
+}

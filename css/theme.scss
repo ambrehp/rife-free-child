@@ -1,0 +1,107 @@
+/**** SOMMAIRE ****/
+
+/** GENERAL **/
+
+$rouge-fonce: #E00000;
+$rouge-clair: #FE5858;
+$rose: #FFD6D6;
+$noir: #000;
+$bleu-fonce: #313144;
+$gris-fonce: #C4C4C4;
+$gris-medium: #D8D8D8;
+$gris-clair: #E5E5E5;
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url(/assets/font/spacemono/SpaceMono-Italic.woff) format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'SpaceMono';
+    src: url(/assets/font/spacemono/SpaceMono-Regular_1.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpaceMono';
+    src: url(/assets/font/spacemono/SpaceMono-Bold.woff) format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpaceMono';
+    src: url(/assets/font/spacemono/SpaceMono-BoldItalic.woff) format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(/assets/font/poppins/Poppins-Light_1.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    background-color: #fff!important;
+    color: #000!important;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none!important;
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'SpaceMono', sans-serif;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+/** MENU **/
+#site-navigation {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 7rem;
+
+            img {
+                width: 216px;
+            }
+            ul {
+                list-style: none;
+                text-transform: uppercase;
+                font-family: 'SpaceMono', sans-serif;
+                display: flex;
+                flex-direction: row;
+                gap: 50px;
+            }
+}
+
+
+
+/** ACCUEIL **/
+
+
+/** FOOTER **/
+#footer {
+    border-top: 1px solid #000;
+    .foot-widgets {
+        display: none;
+    }
+    .foot-text {
+        text-transform: uppercase;
+        font-family: 'SpaceMono', sans-serif;
+        .link-vp {
+            margin: 0 50px;
+        } 
+    }
+}
