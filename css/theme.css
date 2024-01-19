@@ -1,32 +1,39 @@
-/**** SOMMAIRE ****/
+/*** SOMMAIRE
+
+        GENERAL
+        MENU
+        ACCUEIL
+        FOOTER
+
+***/
 /** GENERAL **/
 @font-face {
   font-family: "SpaceMono";
-  src: url(/assets/font/spacemono/SpaceMono-Italic.woff) format("woff");
+  src: url(./font/spacemono/SpaceMono-Italic.woff) format("woff");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "SpaceMono";
-  src: url(/assets/font/spacemono/SpaceMono-Regular_1.woff) format("woff");
+  src: url(./font/spacemono/SpaceMono-Regular_1.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "SpaceMono";
-  src: url(/assets/font/spacemono/SpaceMono-Bold.woff) format("woff");
+  src: url(./font/spacemono/SpaceMono-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "SpaceMono";
-  src: url(/assets/font/spacemono/SpaceMono-BoldItalic.woff) format("woff");
+  src: url(./font/spacemono/SpaceMono-BoldItalic.woff) format("woff");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "Poppins";
-  src: url(/assets/font/poppins/Poppins-Light_1.woff) format("woff");
+  src: url(./font/poppins/Poppins-Light_1.woff) format("woff");
   font-weight: 300;
   font-style: normal;
 }

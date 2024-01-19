@@ -1,7 +1,7 @@
 <?php
 
 /*
-Theme Name: motaphoto-child
+Theme Name: rife-free-child
 Theme URI: https://example.com/
 description: a child theme of the rife-free theme
 Author: John Doe
@@ -19,6 +19,7 @@ function theme_enqueue_styles()
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     //  Chargement du style personnalisé pour le theme
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
+    wp_enqueue_style('mediaqueries-style', get_stylesheet_directory_uri() . '/css/mediaqueries.css', array(), filemtime(get_stylesheet_directory() . '/css/mediaqueries.css'));
 }
 
 
@@ -32,3 +33,12 @@ function register_my_menus()
         )
     );
 }
+add_action('init', 'register_my_menus');
+
+// import script.js
+function ajouter_script_theme_enfant()
+{
+    wp_enqueue_script('script-theme-enfant', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
+}
+
+add_action('wp_enqueue_scripts', 'ajouter_script_theme_enfant');

@@ -19,19 +19,39 @@
                 <div class="main-navigation-logo">
                     <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>'/assets/images/logo-nathalie-mota.png'" alt="Logo Nathalie MOTA"></a>
                 </div>
-            </div>
 
-            <!-- Menu wp -->
-            <?php
-            wp_nav_menu(
-                array(
-                    'menu' => 'menu desktop',
-                    'theme_location' => 'main menu',
-                    'menu_id'     => 'primary-menu',
-                    'menu_class'     => 'menu',
-                )
-            );
-            ?>
+                <!-- MENU WP -->
+                <?php
+                wp_nav_menu(
+                    array(
+                        'menu' => 'menu desktop',
+                        'theme_location' => 'main menu',
+                        'menu_id'     => 'primary-menu',
+                        'menu_class'     => 'menu',
+                    )
+                );
+                ?>
+
+                <!-- MENU MOBILE -->
+
+                <div class="menu-btn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="mobile-menu">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'menu' => 'menu desktop',
+                            'theme_location' => 'main menu',
+                            'menu_id'     => 'primary-menu',
+                            'menu_class'     => 'menu',
+                        )
+                    );
+                    ?>
+                </div>
+
             </div>
         </nav>
     </header>
