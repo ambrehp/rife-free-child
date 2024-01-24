@@ -1,6 +1,6 @@
 /*** SOMMAIRE
 
-        GENERAL
+       GENERAL
         MENU
         ACCUEIL
         FOOTER
@@ -37,47 +37,75 @@
   font-weight: 300;
   font-style: normal;
 }
+h1 {
+  font-family: "SpaceMono";
+  font-style: italic;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "SpaceMono";
+  font-style: italic;
+  font-weight: 400;
+}
+
+h3, .menu {
+  font-family: "SpaceMono";
+  font-style: normal;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
 body {
   background-color: #fff !important;
-  color: #000 !important;
+  color: #000;
   max-width: 100%;
   margin: 0 auto;
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
+  color: #000;
 }
 a:hover {
   font-weight: 700;
 }
 
-h1, h2, h3 {
-  font-family: "SpaceMono", sans-serif;
-}
-
-p {
-  font-family: "Poppins", sans-serif;
-}
-
 /** MENU **/
-#site-navigation {
+.nav {
+  width: 100%;
+  background-color: #fff;
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
   align-items: center;
   padding: 10px 7rem;
 }
-#site-navigation img {
+
+.nav .nav-header {
+  flex: 0.95;
+  padding-left: 1rem;
+}
+.nav .nav-header .nav-logo img {
   width: 216px;
 }
-#site-navigation ul {
-  list-style: none;
-  text-transform: uppercase;
-  font-family: "SpaceMono", sans-serif;
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
+.nav #primary-menu {
+  display: flex !important;
+  gap: 2rem !important;
+}
+.nav .nav-list li {
+  list-style: none !important;
+}
+.nav #nav-check {
+  display: none;
 }
 
 /** ACCUEIL **/

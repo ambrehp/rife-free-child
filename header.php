@@ -14,13 +14,22 @@
 
     <?php wp_body_open(); ?>
     <header>
-        <nav id="site-navigation">
-            <div class="main-navigation">
-                <div class="main-navigation-logo">
+        <nav class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-logo">
                     <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>'/assets/images/logo-nathalie-mota.png'" alt="Logo Nathalie MOTA"></a>
                 </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check" class="burger-icon">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </label>
+            </div>
 
-                <!-- MENU WP -->
+            <ul class="nav-list">
                 <?php
                 wp_nav_menu(
                     array(
@@ -31,27 +40,7 @@
                     )
                 );
                 ?>
-
-                <!-- MENU MOBILE -->
-
-                <div class="menu-btn">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <div class="mobile-menu">
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'menu' => 'menu desktop',
-                            'theme_location' => 'main menu',
-                            'menu_id'     => 'primary-menu',
-                            'menu_class'     => 'menu',
-                        )
-                    );
-                    ?>
-                </div>
-
-            </div>
+            </ul>
         </nav>
+
     </header>

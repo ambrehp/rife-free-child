@@ -1,13 +1,13 @@
-        /*** SOMMAIRE
+         /*** SOMMAIRE
 
         GENERAL
-        MENU
-        ACCUEIL
-        FOOTER
+         MENU
+         ACCUEIL
+         FOOTER
         
-***/
+ ***/
 
-/** GENERAL **/
+ /** GENERAL **/
 
 $rouge-fonce: #E00000;
 $rouge-clair: #FE5858;
@@ -18,84 +18,123 @@ $gris-fonce: #C4C4C4;
 $gris-medium: #D8D8D8;
 $gris-clair: #E5E5E5;
 
+$fontSpaceMono: 'SpaceMono';
+$fontPoppins: 'Poppins';
+
+// Déclaration des font
 @font-face {
-    font-family: 'SpaceMono';
+    font-family: $fontSpaceMono;
     src: url(./font/spacemono/SpaceMono-Italic.woff) format('woff');
     font-weight: 400;
     font-style: italic;
 }
+
 @font-face {
-    font-family: 'SpaceMono';
+    font-family: $fontSpaceMono;
     src: url(./font/spacemono/SpaceMono-Regular_1.woff) format('woff');
     font-weight: 400;
     font-style: normal;
 }
+
 @font-face {
-    font-family: 'SpaceMono';
+    font-family: $fontSpaceMono;
     src: url(./font/spacemono/SpaceMono-Bold.woff) format('woff');
     font-weight: 700;
     font-style: normal;
 }
+
 @font-face {
-    font-family: 'SpaceMono';
+    font-family: $fontSpaceMono;
     src: url(./font/spacemono/SpaceMono-BoldItalic.woff) format('woff');
     font-weight: 700;
     font-style: italic;
 }
+
 @font-face {
-    font-family: 'Poppins';
+    font-family: $fontPoppins;
     src: url(./font/poppins/Poppins-Light_1.woff) format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
-body {
-    background-color: #fff!important;
-    color: #000!important;
-    max-width: 100%;
-    margin: 0 auto;
+h1 {
+    font-family: $fontSpaceMono;
+    font-style: italic;
+    font-weight: 700;
 }
 
-a {
-    text-decoration: none!important;
-    &:hover {
-        font-weight: 700;
-    }
+h2 {
+    font-family: $fontSpaceMono;
+    font-style: italic;
+    font-weight: 400;
 }
 
-h1, h2, h3 {
-    font-family: 'SpaceMono', sans-serif;
+h3, .menu {
+    font-family: $fontSpaceMono;
+    font-style: normal;
+    font-weight: 400;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: $fontPoppins;
+    font-style: normal;
+    font-weight: 300;
 }
+ 
 
-/** MENU **/
-#site-navigation {
+* {
+    box-sizing: border-box;
+    text-decoration: none!important;
+  }
+
+  body {
+    background-color: #fff!important;
+    color: $noir;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: none;
+    color: $noir;
+        &:hover {
+        font-weight: 700;
+    }
+  }
+
+  /** MENU **/ 
+  
+  .nav {
+    width: 100%;
+    background-color: #fff;
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 7rem;
-
-            img {
-                width: 216px;
-            }
-            ul {
-                list-style: none;
-                text-transform: uppercase;
-                font-family: 'SpaceMono', sans-serif;
-                display: flex;
-                flex-direction: row;
-                gap: 50px;
-            }
+  }
+  .nav {
+   .nav-header {
+    flex: 0.95;
+    padding-left: 1rem;
+  }
+    .nav-header {
+        .nav-logo img {
+            width: 216px;
+        }
+    }
+   #primary-menu {
+    display: flex!important;
+    gap: 2rem!important;
+  }
+    .nav-list {
+        li {
+            list-style: none!important;
+        }
+    }
+   #nav-check {
+      display: none;
+  }
 }
 
-
 /** ACCUEIL **/
-
 
 /** FOOTER **/
 #footer {
