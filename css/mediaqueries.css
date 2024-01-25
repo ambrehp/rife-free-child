@@ -1,68 +1,59 @@
-@charset "UTF-8";
+@media (min-width: 768px) {
+  .burger-icon,
+  .close-icon {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  /** MENU **/
+  .nav {
+    padding: 10px 2rem;
+  }
+}
 @media (max-width: 480px) {
   .nav {
     padding: 1rem;
   }
-  .nav > .nav-btn {
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding-top: 0.2rem;
+  /* Style burger menu version mobile */
+  .nav #primary-menu {
+    gap: 2rem;
+    padding: 0;
   }
-  .nav > .nav-btn > label {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
-  }
-  .nav > .nav-btn > label > span {
-    display: block;
-    width: 25px;
-    height: 0;
-    border-top: 2px solid #000;
-  }
-  .nav > .nav-list {
-    position: absolute;
-    display: flex;
-    gap: 1rem;
-    width: 100%;
+  .nav-list {
+    flex-direction: column;
     background-color: #E00000;
-    height: 0;
-    transition: all 0.3s ease-in;
+    position: fixed;
     top: 40px;
     left: 0;
-    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-list ul {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  .nav #primary-menu {
-    flex-direction: column;
+  .nav-list li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  /* Afficher le bouton hamburger en version mobile */
+  .nav .burger-icon {
+    display: block;
+  }
+  /* Cacher le bouton croix en version mobile */
+  .close-icon {
+    display: none;
+  }
+  /* Afficher le menu hamburger en version mobile lorsqu'il est ouvert */
+  .nav-list.open {
+    left: 100% !important;
     padding: 0;
-    text-align: center;
-  }
-  .nav > .nav-list > li {
-    width: 100%;
-    margin-top: 1.5rem;
-  }
-  .nav > #nav-check:checked ~ .nav-list {
-    height: calc(100vh - 120px);
-    z-index: 1;
-    padding: 0;
-  }
-  .burger-icon .line {
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  .burger-icon .line1.rotate-down,
-  .burger-icon .line2.fade-out,
-  .burger-icon .line3.rotate-up {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  /* Styles pour le menu lorsqu'il est cochée */
-  #nav-check:checked ~ .burger-icon .line1.rotate-down,
-  #nav-check:checked ~ .burger-icon .line2.fade-out,
-  #nav-check:checked ~ .burger-icon .line3.rotate-up {
-    transform: rotate(0) translate(0, 0);
   }
 }

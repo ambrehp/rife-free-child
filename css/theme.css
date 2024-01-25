@@ -2,6 +2,7 @@
 
        GENERAL
         MENU
+        POPUP
         ACCUEIL
         FOOTER
 
@@ -90,6 +91,9 @@ a:hover {
   padding: 10px 7rem;
 }
 
+.nav {
+  /*cacher les icons du menu mobile*/
+}
 .nav .nav-header {
   flex: 0.95;
   padding-left: 1rem;
@@ -99,12 +103,52 @@ a:hover {
 }
 .nav #primary-menu {
   display: flex !important;
-  gap: 2rem !important;
+  gap: 4rem;
 }
 .nav .nav-list li {
   list-style: none !important;
 }
-.nav #nav-check {
+.nav .burger-icon,
+.nav .close-icon {
+  display: none;
+}
+
+/* POPUP */
+#myBtn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+}
+
+#myBtn:hover {
+  font-weight: bold;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 50px 80px;
+  border: 5px solid #000;
+  width: 50%;
+}
+
+.close {
   display: none;
 }
 
@@ -112,14 +156,22 @@ a:hover {
 /** FOOTER **/
 #footer {
   border-top: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  color: #000;
 }
-#footer .foot-widgets {
-  display: none;
+
+.menu-menu-footer-container {
+  margin-right: 100px;
 }
-#footer .foot-text {
+
+#footer-menu {
+  display: flex;
+  gap: 100px;
+  list-style: none;
+}
+
+.menu {
   text-transform: uppercase;
   font-family: "SpaceMono", sans-serif;
-}
-#footer .foot-text .link-vp {
-  margin: 0 50px;
 }
