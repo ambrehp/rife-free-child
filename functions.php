@@ -35,10 +35,11 @@ function register_my_menus()
 }
 add_action('init', 'register_my_menus');
 
+
 // import script.js
 function ajouter_script_theme_enfant()
 {
     wp_enqueue_script('script-theme-enfant', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
 }
 
-add_action('wp_enqueue_scripts', 'ajouter_script_theme_enfant');
+add_action('wp_enqueue_scripts', 'ajouter_script_theme_enfant', 27);

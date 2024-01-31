@@ -1,3 +1,10 @@
+<?php
+
+wp_footer();
+?>
+<!-- appel de la popup de contact -->
+<?php get_template_part('templates/popup-contact') ?>
+
 <div id="footer">
     <?php
     wp_nav_menu(array(
@@ -10,14 +17,8 @@
     <div>
         <p> <b>TOUS DROITS RÉSERVÉS</b> </p>
     </div>
-    <!-- appel de la popup de contact -->
-    <?php get_template_part('templates/popup-contact.php'); ?>
-
 </div>
-<?php
 
-wp_footer();
-?>
 </body>
 
 </html>

@@ -114,22 +114,22 @@ a:hover {
 }
 
 /* POPUP */
-#myBtn {
+#btn-contact {
   background-color: transparent;
   border: none;
   position: absolute;
-  right: 10px;
-  top: 40px;
+  right: 20px;
+  top: 26px;
 }
 
-#myBtn:hover {
+#btn-contact:hover {
   font-weight: bold;
 }
 
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -146,6 +146,7 @@ a:hover {
   padding: 50px 80px;
   border: 5px solid #000;
   width: 50%;
+  z-index: 10;
 }
 
 .close {

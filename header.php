@@ -42,6 +42,8 @@
                     )
                 );
                 ?>
+                <!-- <a href="#" id="btn-contact">CONTACT</a> -->
+
             </ul>
         </nav>
 

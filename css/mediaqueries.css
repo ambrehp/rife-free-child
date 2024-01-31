@@ -13,6 +13,8 @@
 @media (max-width: 480px) {
   .nav {
     padding: 1rem;
+    position: fixed;
+    z-index: 10;
   }
   /* Style burger menu version mobile */
   .nav #primary-menu {
@@ -23,7 +25,7 @@
     flex-direction: column;
     background-color: #E00000;
     position: fixed;
-    top: 40px;
+    top: 14px;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -33,6 +35,7 @@
     z-index: 10;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    font-size: 44px;
   }
   .nav-list ul {
     display: flex;
