@@ -13,6 +13,16 @@ $gris-fonce: #C4C4C4;
 $gris-medium: #D8D8D8;
 $gris-clair: #E5E5E5;
 
+
+@media (max-width:1024px) {
+    /** popup **/
+  .modal-content {
+    margin: 45% auto;
+    height: 50vh;
+  }
+}
+
+
 @media (min-width:768px) {
   .burger-icon,
   .close-icon {
@@ -22,6 +32,11 @@ $gris-clair: #E5E5E5;
 
 @media (max-width:768px) {
 
+    /** popup **/
+    .modal-content {
+      width: 80%;
+    }
+
     /** MENU **/
 .nav {
     padding: 10px 2rem;
@@ -30,6 +45,15 @@ $gris-clair: #E5E5E5;
 
 
 @media (max-width: 480px) {
+  /** popup **/
+  #wpforms-56 {
+    margin: 3rem;
+}
+  .modal-content {
+  height: 45vh;
+}
+
+  /** MENU **/
   .nav {
     padding: 1rem;
     position: fixed;

@@ -14,7 +14,7 @@
 
     <?php wp_body_open(); ?>
     <header>
-        <nav class="nav">
+        <nav class="nav" role="navigation">
             <div class="nav-header">
                 <div class="nav-logo">
                     <a href="<?php echo esc_url(home_url()); ?>">
