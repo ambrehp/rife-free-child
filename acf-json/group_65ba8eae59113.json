@@ -1,6 +1,6 @@
 {
     "key": "group_65ba8eae59113",
-    "title": "Page infos photo",
+    "title": "photo",
     "fields": [
         {
             "key": "field_65ba96023eb6e",
@@ -93,14 +93,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "info_photo"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "single-photo.php"
+                "value": "photo"
             }
         ]
     ],
@@ -113,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1707325301
+    "modified": 1707331186
 }

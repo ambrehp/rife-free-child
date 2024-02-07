@@ -8,8 +8,7 @@
 get_header(); ?>
 
 <section class="detail-container">
-    <?php if (have_posts()) :
-        while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php //   Vérifier l'activation de ACF
             if (!function_exists('get_field')) return;
             $reference = get_field('reference');
@@ -66,8 +65,7 @@ get_header(); ?>
             $args = array(
                 'post_type' => 'photos',
                 'posts_per_page' => 2,
-                'post__not_in' => array(get_the_ID()),
-                'categorie' => get_the_terms(get_the_ID(), 'categorie')[0]->slug,
+                'post__not_in' => array(get_the_ID())
             );
 
             $query = new WP_Query($args);
