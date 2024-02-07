@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<!-- Template Name: Page single-photo personnalisée -->
 <?php
 if(have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -8,14 +7,14 @@ if(have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="photo-container">
         <div class="photo-details-left">
             <h1><?php the_title(); ?></h1>
-            <p>Référence : <?= the_field('reference'); ?></p>
-            <p>Catégorie : <?php echo get_the_term_list(get_the_ID(), 'categorie', '', ', '); ?></p>
-            <p>Format : <?php echo get_the_term_list(get_the_ID(), 'format', '', ', '); ?></p>
-            <p>Type : <?php echo the_field('type'); ?></p>
-            <p>Année : <?php echo the_field('annee'); ?></p>
+            <p>Référence : <?= get_field('reference'); ?></p>
+            <p>Catégorie : <?= get_the_term_list(get_the_ID(), 'categorie-photo'); ?></p>
+            <p>Format : <?= get_the_term_list(get_the_ID(), 'format-photo'); ?></p>
+            <p>Type : <?= get_field('type'); ?></p>
+            <p>Année : <?= get_field('annee'); ?></p>
         </div>
         <div class="photo-details-right">
-            <?php the_post_thumbnail('large'); ?>
+            <?php the_post_thumbnail('medium'); ?>
             <a class="fullscreen-link" href="<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>">
                 <span></span>
             </a>
@@ -38,7 +37,7 @@ if(have_posts()) : while (have_posts()) : the_post(); ?>
                         <img class="nav-thumbnail-prev" src="<?php echo wp_get_attachment_image_url(get_post_thumbnail_id($prev_post->ID), 'thumbnail'); ?>" alt="<?php echo $prev_post->post_title; ?>">
                     <?php endif; ?>
                 </div>
-                <?php previous_post_link('%link', '<img src="/wp-content/themes/NathalieMota/images/arrow_left.svg" alt="Précédent">', FALSE, '', 'format'); ?>
+                <!-- <?php previous_post_link('%link', '<img src="/wp-content/themes/NathalieMota/images/arrow_left.svg" alt="Précédent">', FALSE, '', 'format'); ?> -->
             </div>
 
             <div class="photo-info-nav-next">
@@ -49,7 +48,7 @@ if(have_posts()) : while (have_posts()) : the_post(); ?>
                         <img class="nav-thumbnail-next" src="<?php echo wp_get_attachment_image_url(get_post_thumbnail_id($next_post->ID), 'thumbnail'); ?>" alt="<?php echo $next_post->post_title; ?>">
                     <?php endif; ?>
                 </div>
-                <?php next_post_link('%link', '<img src="/wp-content/themes/NathalieMota/images/arrow_right.svg" alt="Suivant">', FALSE, '', 'format'); ?>
+                <!-- <?php next_post_link('%link', '<img src="/wp-content/themes/NathalieMota/images/arrow_right.svg" alt="Suivant">', FALSE, '', 'format'); ?> -->
             </div>
 
         </div>
@@ -57,7 +56,7 @@ if(have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </div>
 <!-- Mise en place du bloc des photos apparentées -->
-<div class="related-photos">
+<!-- <div class="related-photos">
     <h2>Vous aimerez aussi</h2>
     <div class="related-block-photos">
         <?php
@@ -78,5 +77,5 @@ if(have_posts()) : while (have_posts()) : the_post(); ?>
 
         wp_reset_postdata();
         ?>
-    </div>
+    </div> -->
 </div>

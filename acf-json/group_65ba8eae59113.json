@@ -111,13 +111,6 @@
     "location": [
         [
             {
-                "param": "post_template",
-                "operator": "==",
-                "value": "photo-single.php"
-            }
-        ],
-        [
-            {
                 "param": "post_type",
                 "operator": "==",
                 "value": "info_photo"
@@ -125,9 +118,9 @@
         ],
         [
             {
-                "param": "page_template",
+                "param": "page_type",
                 "operator": "==",
-                "value": "photo-single.php"
+                "value": "top_level"
             }
         ]
     ],
@@ -140,5 +133,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706874007
+    "modified": 1707295752
 }
