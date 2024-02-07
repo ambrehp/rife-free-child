@@ -58,52 +58,30 @@ get_header(); ?>
 </section>
 
 
-<section class="other-container">
-    <h2>VOUS AIMEREZ AUSSI</h2>
-    <div class="suggestion">
-        <!----- Liste carte même catégorie ----->
-        <div class="grid-container" id="post-container">
-            <?php
-            // Récupérer les termes de la taxonomie pour le post actuel
-            $categories = get_the_terms(get_the_ID(), 'categorie-photo');
-            // Récupérer l'ID du post actuellement ouvert
-            $current_post_id = get_the_ID();
+<!-- Mise en place du bloc des photos apparentées -->
+<div class="related-photos">
+    <h2>Vous aimerez aussi</h2>
+    <div class="related-block-photos">
+        <?php
             $args = array(
                 'post_type' => 'photos',
                 'posts_per_page' => 2,
-                'ignore_sticky_posts' => 1,
-                'orderby' => 'rand',
-                'post__not_in' => array($current_post_id),
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'categorie-photo',
-                        'field' => 'slug',
-                        'terms' => (!empty($categories)) ? $categories[0]->slug : '',
-                    ),
-                ),
+                'post__not_in' => array(get_the_ID()),
+                'categorie' => get_the_terms(get_the_ID(), 'categorie')[0]->slug,
             );
 
             $query = new WP_Query($args);
-            // Variable pour suivre le nombre de cartes affichées
-            $card_count = 0;
+
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
-                    // Vérifier si le post actuel est différent du post affiché
-                    if ($current_post_id != get_the_ID()) {
-                        //Appel du code de la card déplacé dans le sous template "card"
-                        get_template_part('templates-parts/card');
-                        // Incrémenter le nombre de cartes affichées
-                        $card_count++;
-                    }
+                    get_template_part('templates_part/photo-block');
                 endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<p>Désolé, mais il n\'y a aucune autre photo à afficher dans cette catégorie.</p>';
             endif;
-            ?>
-        </div>
+
+            wp_reset_postdata();
+        ?>
     </div>
-</section>
+</div>
 
 
 <?php // End the loop.
