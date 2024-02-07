@@ -28,26 +28,6 @@
             "preview_size": "medium_large"
         },
         {
-            "key": "field_65bcb4607bd51",
-            "label": "Titre publication",
-            "name": "titre_publication",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_65ba8ecf717b5",
             "label": "Référence",
             "name": "reference",
@@ -118,9 +98,9 @@
         ],
         [
             {
-                "param": "page_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "top_level"
+                "value": "single-photo.php"
             }
         ]
     ],
@@ -132,6 +112,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1707295752
+    "show_in_rest": 1,
+    "modified": 1707325301
 }

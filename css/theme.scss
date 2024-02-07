@@ -141,14 +141,14 @@ p {
 
 /* POPUP */
 
-#btn-contact {
+.btn-contact {
     background-color: transparent;
     border: none;
     position: absolute;
     right: 20px;
     top: 26px;
   }
-  #btn-contact:hover {
+  .btn-contact:hover {
     font-weight: bold;
   }
 
