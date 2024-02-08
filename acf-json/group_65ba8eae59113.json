@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_65ba96023eb6e",
-            "label": "Photo",
-            "name": "photo",
+            "label": "image",
+            "name": "image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -25,7 +25,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium_large"
+            "preview_size": "large"
         },
         {
             "key": "field_65ba8ecf717b5",
@@ -106,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1707331186
+    "modified": 1707384880
 }
