@@ -34,40 +34,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ///// FONCTION DE LA POPUP
 
-  // Récupère le bouton contact
-  let btn = document.getElementById("myBtn");
-  const btnMenu = document.querySelector(".popup-link");
+  jQuery(function ($) {
+    // Récupère le bouton contact
+    let btn = document.getElementById("myBtn");
+    const btnMenu = document.querySelector(".popup-link");
 
-  // Récupère le container de la modal
-  let modal = document.getElementById("myModal");
+    // Récupère le container de la modal
+    let modal = document.getElementById("myModal");
 
-  // Récupère <span> qui ferme la modal
-  let span = document.getElementsByClassName("close")[0];
+    // Récupère <span> qui ferme la modal
+    let span = document.getElementsByClassName("close")[0];
 
-  // Déclare fonction pour ouvrir la modal
-  function openModal() {
-    modal.style.display = "block";
-  }
+    // Fonction pour ouvrir la modal
+    function openModal() {
+      modal.style.display = "block";
+    }
 
-  // Quand l'utilisateur clique sur le lien du menu, ouvre la modal
-  btn.onclick = function () {
-    openModal();
-  };
-
-  // Quand l'utilisateur clique sur le btn, ouvre la modal
-  btnMenu.onclick = function () {
-    openModal();
-  };
-
-  // Quand l'utilisateur clique sur <span> (x), ferme la modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  // Quand l'utilisateur clique en dehors de la modal, ferme la modal
-  window.onclick = function (event) {
-    if (event.target == modal) {
+    // Fonction pour fermer la modal
+    function closeModal() {
       modal.style.display = "none";
     }
-  };
+
+    // Quand l'utilisateur clique sur le bouton contact ou le lien du menu, ouvre la modal
+    btn.onclick = btnMenu.onclick = function () {
+      openModal();
+    };
+
+    // Quand l'utilisateur clique sur <span> (x), ferme la modal
+    span.onclick = function () {
+      closeModal();
+    };
+
+    // Quand l'utilisateur clique en dehors de la modal, ferme la modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+
+    ///// Ajout Réf au formulaire Contact
+    $("#myBtn, .popup-link").on("click", function (e) {
+      e.preventDefault(); // Permet d'empêcher l'ouverture du formulaire avant le pré-remplissage de la Réf.
+
+      // Récupère la valeur du champ ACF "reference" à partir du post actuel
+      const valeurChampACF = $(this).data("reference");
+
+      // Pré-remplit le champ du formulaire
+      $("#wpforms-56-field_3").val(valeurChampACF);
+
+      // Ouvre le formulaire
+      $("#wpforms-56").show();
+    });
+  });
 });

@@ -41,19 +41,10 @@ get_header(); ?>
 <section class="contact-container">
     <div class="contact-content">
         <p>Cette photo vous intéresse ?</p>
-        <button id="myBtn" data-photo-ref="<?php the_field('reference'); ?>">Contact</button>
+        <button id="myBtn" data-reference="<?php the_field('reference'); ?>">Contact</button>
     </div>
 
     <!-- Navigation entre chaque post -->
-    <!-- <div class="post-navigation">
-        <div class="previous-navigation">
-            <?php echo get_the_post_thumbnail(get_previous_post(), 'thumbnail'); ?>
-        </div>
-        <div class="next-navigation">
-            <?php echo get_the_post_thumbnail(get_next_post(), 'thumbnail'); ?>
-        </div>
-    </div> -->
-
     <div class="site__navigation__prev">
         <?php
             $prev_post = get_previous_post();
@@ -64,10 +55,11 @@ get_header(); ?>
                 if (has_post_thumbnail($prev_post_id)) {
         ?>
                 <div>
-                    <?php echo get_the_post_thumbnail($prev_post_id, array(80, 70)); ?></div> <!-- fléche post précedent  -->
+                    <?php echo get_the_post_thumbnail($prev_post_id, array(80, 70));
+                    previous_post_link(' %link', '&#10229;'); ?> <!-- fléche post précedent  -->
+                </div>
         <?php
                 }
-                previous_post_link(' %link', '&#10229;');
             }
         ?>
     </div>
@@ -80,23 +72,14 @@ get_header(); ?>
                 echo  '<a rel="next" href="' . get_permalink($next_post_id) . '" title="' . $next_title . '" class="next_post">';
                 if (has_post_thumbnail($next_post_id)) {
         ?>
-                <div><?php echo get_the_post_thumbnail($next_post_id, array(80, 70)); ?></div> <!-- fléche post suivant  -->
+                <div><?php echo get_the_post_thumbnail($next_post_id, array(80, 70));
+                        next_post_link(' %link', '&#10230;'); ?> <!-- fléche post suivant  -->
+                </div>
         <?php
                 }
-                next_post_link(' %link', '&#10230;');
             }
         ?>
-
     </div>
-    <!-- fléche post précedent  -->
-    <!-- <div class="navigation-arrows">
-        <div class="previous-arrow">
-            <?php previous_post_link(' %link', '&#10229;'); ?>  fléche post précedent 
-        </div>
-        <div class="next-arrow">
-            <?php next_post_link(' %link', '&#10230;'); ?>  fléche post suivant
-        </div>
-    </div> -->
 </section>
 
 

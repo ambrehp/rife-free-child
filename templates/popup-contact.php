@@ -1,10 +1,5 @@
-<!-- Modal -->
-<!-- <p>Cette phtoto vous intéresse ?</p> -->
-<!-- <button id="myBtn" class="popup-link">Open Modal</button> -->
-
 <!-- Container de la modal -->
 <div id="myModal" class="modal">
-    <!-- <div id="contact-modal" class="modal"> -->
 
     <!-- content de la Modal -->
     <div class="modal-content">
