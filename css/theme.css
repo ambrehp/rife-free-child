@@ -83,6 +83,16 @@ a:hover {
   font-weight: 700;
 }
 
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
 /** MENU **/
 .nav {
   width: 100%;

@@ -103,6 +103,16 @@ p {
     }
   }
 
+  .flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
   /** MENU **/ 
   
   .nav {

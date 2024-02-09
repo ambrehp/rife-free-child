@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<section class="detail-container">
+<section class="detail-container flexrow">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php //   Vérifier l'activation de ACF
             if (!function_exists('get_field')) return;
@@ -39,52 +39,54 @@ get_header(); ?>
 
 <!-- Ajout section contact -->
 <section class="contact-container">
-    <div class="contact-content">
+    <div class="contact-content flexrow">
         <p>Cette photo vous intéresse ?</p>
         <button id="myBtn" data-reference="<?php the_field('reference'); ?>">Contact</button>
     </div>
 
     <!-- Navigation entre chaque post -->
-    <div class="site__navigation__prev">
-        <?php
+    <div class="flexrow">
+        <div class="site__navigation__prev">
+            <?php
             $prev_post = get_previous_post();
             if ($prev_post) {
                 $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
                 $prev_post_id = $prev_post->ID;
                 echo '<a rel="prev" href="' . get_permalink($prev_post_id) . '" title="' . $prev_title . '" class="previous_post">';
                 if (has_post_thumbnail($prev_post_id)) {
-        ?>
-                <div>
-                    <?php echo get_the_post_thumbnail($prev_post_id, array(80, 70));
-                    previous_post_link(' %link', '&#10229;'); ?> <!-- fléche post précedent  -->
-                </div>
-        <?php
+            ?>
+                    <div>
+                        <?php echo get_the_post_thumbnail($prev_post_id, array(80, 70));
+                        previous_post_link(' %link', '&#10229;'); ?> <!-- fléche post précedent  -->
+                    </div>
+            <?php
                 }
             }
-        ?>
-    </div>
-    <div class="site__navigation__next">
-        <?php
+            ?>
+        </div>
+        <div class="site__navigation__next">
+            <?php
             $next_post = get_next_post();
             if ($next_post) {
                 $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
                 $next_post_id = $next_post->ID;
                 echo  '<a rel="next" href="' . get_permalink($next_post_id) . '" title="' . $next_title . '" class="next_post">';
                 if (has_post_thumbnail($next_post_id)) {
-        ?>
-                <div><?php echo get_the_post_thumbnail($next_post_id, array(80, 70));
-                        next_post_link(' %link', '&#10230;'); ?> <!-- fléche post suivant  -->
-                </div>
-        <?php
+            ?>
+                    <div><?php echo get_the_post_thumbnail($next_post_id, array(80, 70));
+                            next_post_link(' %link', '&#10230;'); ?> <!-- fléche post suivant  -->
+                    </div>
+            <?php
                 }
             }
-        ?>
+            ?>
+        </div>
     </div>
 </section>
 
 
 <!-- Bloc des photos apparentées -->
-<div class="related-photos">
+<div class="related-photos flexcolumn">
     <h2>Vous aimerez aussi</h2>
     <div class="related-block-photos">
         <?php
