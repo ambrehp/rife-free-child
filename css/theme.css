@@ -115,15 +115,16 @@ a:hover {
 
 /* POPUP */
 .btn-contact {
-  background-color: transparent;
+  background-color: #D8D8D8;
   border: none;
-  position: absolute;
+  border-radius: 2px;
   right: 20px;
   top: 26px;
 }
 
 .btn-contact:hover {
   font-weight: bold;
+  background-color: #000;
 }
 
 .modal {

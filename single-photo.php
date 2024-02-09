@@ -40,7 +40,7 @@ get_header(); ?>
 <section class="contact-container">
     <div class="contact-content">
         <p>Cette phtoto vous intéresse ?</p>
-        <button class="" data-reference="<?php the_field('reference'); ?>">contact</button>
+        <button id="contact-modal" class="btn-contact popup-link" data-photo-ref="<?php the_field('reference'); ?>">contact</button>
     </div>
 
     <!-- Previous/next post navigation -->
