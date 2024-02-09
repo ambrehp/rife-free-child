@@ -18,11 +18,11 @@ get_header(); ?>
 
             <div class="detail-left">
                 <h1> <?php the_title(); ?></h1>
-                <p>Référence : <?php the_field('reference'); ?></p>
-                <p>Catégorie : <?php echo get_the_term_list(get_the_ID(), 'categorie-photo'); ?></p>
-                <p>Format : <?php echo get_the_term_list(get_the_ID(), 'format-photo'); ?></p>
-                <p>Type : <?php the_field('type'); ?></p>
-                <p>Année : <?php the_field('annee'); ?></p>
+                <p>RÉFÉRENCE : <?php the_field('reference'); ?></p>
+                <p>CATÉGORIE : <?php echo get_the_term_list(get_the_ID(), 'categorie-photo'); ?></p>
+                <p>FORMAT : <?php echo get_the_term_list(get_the_ID(), 'format-photo'); ?></p>
+                <p>TYPE : <?php the_field('type'); ?></p>
+                <p>ANNÉE : <?php the_field('annee'); ?></p>
             </div>
 
             <div class="detail-right">
@@ -37,13 +37,14 @@ get_header(); ?>
             </div>
 </section>
 
+<!-- Ajout section contact -->
 <section class="contact-container">
     <div class="contact-content">
         <p>Cette phtoto vous intéresse ?</p>
-        <button id="contact-modal" class="btn-contact popup-link" data-photo-ref="<?php the_field('reference'); ?>">contact</button>
+        <button id="myBtn" data-photo-ref="<?php the_field('reference'); ?>">Contact</button>
     </div>
 
-    <!-- Previous/next post navigation -->
+    <!-- Navigation entre chaque post -->
     <div class="post-navigation">
         <div class="previous-navigation">
             <?php echo get_the_post_thumbnail(get_previous_post(), 'single-photo-thumbnail-size'); ?>
@@ -64,7 +65,7 @@ get_header(); ?>
 </section>
 
 
-<!-- Mise en place du bloc des photos apparentées -->
+<!-- Bloc des photos apparentées -->
 <div class="related-photos">
     <h2>Vous aimerez aussi</h2>
     <div class="related-block-photos">
@@ -92,3 +93,6 @@ get_header(); ?>
 <?php // End the loop.
         endwhile;
     endif; ?>
+
+<?php get_footer(); ?>
+<!-- Inclusion du script JavaScript -->

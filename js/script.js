@@ -30,27 +30,39 @@ document.addEventListener("DOMContentLoaded", function () {
   /////////////////////////////////////////
   //////////////////////////////////////////
 
-  ///// FONCTION POPUP
-  // Popup contact
-  let modal = document.getElementById("contact-modal");
+  // ///// FONCTION DE LA POPUP
 
   // Récupère le bouton contact
-  let btn = document.querySelector(".popup-link");
+  let btn = document.getElementById("myBtn");
+  const btnMenu = document.querySelector(".popup-link");
+
+  // Récupère le container de la modal
+  let modal = document.getElementById("myModal");
 
   // Récupère <span> qui ferme la modal
   let span = document.getElementsByClassName("close")[0];
 
-  // Quand l'utilisateur clique sur le lien, ouvre la modal
-  btn.addEventListener("click", () => {
+  // Déclare fonction pour ouvrir la modal
+  function openModal() {
     modal.style.display = "block";
-  });
+  }
+
+  // Quand l'utilisateur clique sur le lien du menu, ouvre la modal
+  btn.onclick = function () {
+    openModal();
+  };
+
+  // Quand l'utilisateur clique sur le btn, ouvre la modal
+  btnMenu.onclick = function () {
+    openModal();
+  };
 
   // Quand l'utilisateur clique sur <span> (x), ferme la modal
   span.onclick = function () {
     modal.style.display = "none";
   };
 
-  // Quand l'utilisateur clique en dehors de la modal, ferme la
+  // Quand l'utilisateur clique en dehors de la modal, ferme la modal
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";

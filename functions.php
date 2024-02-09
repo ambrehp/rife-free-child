@@ -40,27 +40,11 @@ add_action('init', 'register_my_menus');
 // import script.js
 function ajouter_script_theme_enfant()
 {
-    wp_enqueue_script('script-theme-enfant', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('script-theme-enfant', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'ajouter_script_theme_enfant', 27);
 
-
-// Récupération de la valeur d'un champs personnalisé ACF
-// $variable = nom de la variable dont on veut récupérer la valeur
-// $field = nom du champs personnalisés
-function my_acf_load_value($variable,  $field)
-{
-    // Initialisation de la valeur à retourner
-    $return = "";
-    // Recherche de la clé
-    foreach ($field as $key => $value) {
-        if ($key === $variable) {
-            $return = $value;
-        }
-    }
-    return $return;
-}
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
