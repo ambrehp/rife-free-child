@@ -4,6 +4,7 @@
         MENU
         POPUP
         ACCUEIL
+        SINGLE
         FOOTER
 
 ***/
@@ -184,6 +185,19 @@ a:hover {
 }
 
 /** ACCUEIL **/
+/** SINGLE **/
+.site__navigation__prev img,
+.site__navigation__next img {
+  width: 77px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.site__navigation__prev img:hover,
+.site__navigation__next img:hover {
+  opacity: 1;
+}
+
 /** FOOTER **/
 #footer {
   border-top: 1px solid #000;

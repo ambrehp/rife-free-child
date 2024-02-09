@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  //console.log('Le DOM est chargé.');
+
   //burger menu
   //Sélection des éléments dans le html
   const menuBtn = document.querySelector(".burger-icon");

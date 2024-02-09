@@ -45,7 +45,10 @@ function ajouter_script_theme_enfant()
 
 add_action('wp_enqueue_scripts', 'ajouter_script_theme_enfant', 27);
 
+/////////
 
+// Ajouter la prise en charge des images mises en avant
+add_theme_support('post-thumbnails');
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
 

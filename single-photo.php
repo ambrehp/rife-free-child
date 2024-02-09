@@ -40,28 +40,63 @@ get_header(); ?>
 <!-- Ajout section contact -->
 <section class="contact-container">
     <div class="contact-content">
-        <p>Cette phtoto vous intéresse ?</p>
+        <p>Cette photo vous intéresse ?</p>
         <button id="myBtn" data-photo-ref="<?php the_field('reference'); ?>">Contact</button>
     </div>
 
     <!-- Navigation entre chaque post -->
-    <div class="post-navigation">
+    <!-- <div class="post-navigation">
         <div class="previous-navigation">
-            <?php echo get_the_post_thumbnail(get_previous_post(), 'single-photo-thumbnail-size'); ?>
+            <?php echo get_the_post_thumbnail(get_previous_post(), 'thumbnail'); ?>
         </div>
         <div class="next-navigation">
-            <?php echo get_the_post_thumbnail(get_next_post(), 'single-photo-thumbnail-size'); ?>
+            <?php echo get_the_post_thumbnail(get_next_post(), 'thumbnail'); ?>
         </div>
-    </div>
+    </div> -->
 
-    <div class="navigation-arrows">
+    <div class="site__navigation__prev">
+        <?php
+            $prev_post = get_previous_post();
+            if ($prev_post) {
+                $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+                $prev_post_id = $prev_post->ID;
+                echo '<a rel="prev" href="' . get_permalink($prev_post_id) . '" title="' . $prev_title . '" class="previous_post">';
+                if (has_post_thumbnail($prev_post_id)) {
+        ?>
+                <div>
+                    <?php echo get_the_post_thumbnail($prev_post_id, array(80, 70)); ?></div> <!-- fléche post précedent  -->
+        <?php
+                }
+                previous_post_link(' %link', '&#10229;');
+            }
+        ?>
+    </div>
+    <div class="site__navigation__next">
+        <?php
+            $next_post = get_next_post();
+            if ($next_post) {
+                $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
+                $next_post_id = $next_post->ID;
+                echo  '<a rel="next" href="' . get_permalink($next_post_id) . '" title="' . $next_title . '" class="next_post">';
+                if (has_post_thumbnail($next_post_id)) {
+        ?>
+                <div><?php echo get_the_post_thumbnail($next_post_id, array(80, 70)); ?></div> <!-- fléche post suivant  -->
+        <?php
+                }
+                next_post_link(' %link', '&#10230;');
+            }
+        ?>
+
+    </div>
+    <!-- fléche post précedent  -->
+    <!-- <div class="navigation-arrows">
         <div class="previous-arrow">
-            <?php previous_post_link(' %link', '&#10229;'); ?> <!-- fléche post précedent -->
+            <?php previous_post_link(' %link', '&#10229;'); ?>  fléche post précedent 
         </div>
         <div class="next-arrow">
-            <?php next_post_link(' %link', '&#10230;'); ?> <!-- fléche post suivant -->
+            <?php next_post_link(' %link', '&#10230;'); ?>  fléche post suivant
         </div>
-    </div>
+    </div> -->
 </section>
 
 
