@@ -1,12 +1,11 @@
 <?php
 // Récupération des informations de la photo
-$titre_post = get_the_title();
-$titre_nettoye = sanitize_title($titre_post);
-$lien_post = get_site_url() . '/photo/' . $titre_nettoye;
-$photo_post = get_field('image');
+$post_permalink = get_permalink();
+$photo_image_id  = get_field('image');
 $reference_photo = get_field('reference');
+$terms = get_the_terms($post->ID, 'categorie-photo');
 
-// Récupération du format de la photo et stockage pour filtrage
+// Récupération du format de la photo et filtrage
 $formats = get_the_terms(get_the_ID(), 'formats-photo');
 if ($formats && !is_wp_error($formats)) {
     $noms_formats = array();
@@ -16,7 +15,7 @@ if ($formats && !is_wp_error($formats)) {
     $liste_formats = join(', ', $noms_formats);
 }
 
-// Récupération de la catégorie de la photo et stockage pour filtrage
+// Récupération de la catégorie de la photo et filtrage
 $categories = get_the_terms(get_the_ID(), 'categorie-photo');
 if ($categories && !is_wp_error($categories)) {
     $noms_categories = array();
@@ -31,10 +30,19 @@ if ($categories && !is_wp_error($categories)) {
 
 <!-- Affichage du bloc photo -->
 <div class="autres-photos">
-    <div class="lien-photo">
-        <?php echo 'lien:', $lien_post; ?>
+    <div class="">
+        <?php echo $photo_image_id = get_field('image');
+        if ($photo_image_id) {
+            $photo_image_url = wp_get_attachment_image_src($photo_image_id, 'medium'); // Récupérer l'URL de l'image
+            if ($photo_image_url) {
+                $photo_image_url = $photo_image_url[0]; // L'URL de l'image se trouve à l'index 0 du tableau retourné
+                echo '<img src="' . esc_url($photo_image_url) . '" alt="Photo">';
+            }
+        }
+        // var_dump($photo_image) 
+        ?>
     </div>
-    <?php echo 'Photo :', $photo_post; ?>
+
     <div class="survol-photo">
         <div class="structuration-survol-photo">
             <div class="fullscreen-container">
@@ -43,17 +51,22 @@ if ($categories && !is_wp_error($categories)) {
                 </a>
             </div>
             <div class="eye-container">
-                <a href="<?php echo esc_url($lien_post); ?>">
+                <a href="<?php echo esc_url($post_permalink); ?>">
                     <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_eye.png'; ?>" alt="Icon oeil">
                 </a>
             </div>
             <div class="ref-container">
                 <div class="survol-reference">
-                    <?php echo $reference_photo ?>
+
+                    <?php
+                    //Afficher la référence
+                    echo $reference_photo ?>
                 </div>
                 <!-- Vérifier si $liste_categories est définie avant de l'utiliser -->
                 <div class="cat-container">
-                    <?php if (isset($liste_categories)) {
+                    <?php
+                    if (isset($liste_categories)) {
+                        //Afficher la catégorie
                         echo $liste_categories;
                     } ?>
                 </div>
