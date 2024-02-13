@@ -88,22 +88,54 @@ get_header(); ?>
 <!-- Bloc des photos apparentées -->
 <div class="related-photos flexcolumn">
     <h2>Vous aimerez aussi</h2>
-    <div class="related-block-photos">
-        <?php
+    <div class="related-block-photos flexrow">
+        <!-- Grille de photos -->
+        <div class="grid-photos">
+
+            <?php
+            // Récupérer les catégories de la publication actuelle
+            $current_post_categories = get_the_terms($post->ID, 'categorie-photo');
+            $current_category_ids = array();
+
+            if (!empty($current_post_categories)) {
+                foreach ($current_post_categories as $current_category) {
+                    if ($current_category->parent == 3) {
+                        // On ajoute seulement les ID des catégories enfant de la catégorie parent (id = 3)
+                        $current_category_ids[] = $current_category->term_id;
+                    }
+                }
+            }
+
             $args = array(
                 'post_type' => 'image',
                 'posts_per_page' => 2,
-                'post__not_in' => array(get_the_ID())
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'categorie-photo',
+                        'field' => 'id',
+                        'terms' => $current_category_ids,
+                    ),
+                ),
+                'post__not_in' => array($post->ID), // Exclure la publication actuelle
             );
+
 
             $query = new WP_Query($args);
 
-            if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post();
-                    get_template_part('templates/photo-block');
-                endwhile;
-            endif;
+            if ($query->have_posts()) {
+                $count = 0;
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    $count++;
+            ?>
 
+
+                    <!-- Affiche les photos dynamiquement -->
+                    <?php get_template_part('templates/photo-block'); ?>
+            <?php }
+            } ?>
+        </div>
+        <?php
             wp_reset_postdata();
         ?>
     </div>
@@ -115,4 +147,3 @@ get_header(); ?>
     endif; ?>
 
 <?php get_footer(); ?>
-<!-- Inclusion du script JavaScript -->

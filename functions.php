@@ -47,8 +47,27 @@ add_action('wp_enqueue_scripts', 'ajouter_script_theme_enfant', 27);
 
 /////////
 
-// Ajouter la prise en charge des images mises en avant
-add_theme_support('post-thumbnails');
+function my_acf_load_value($variable, $field)
+{
+    // Initialisation de la valeur à retourner
+    $return = "";
+
+    // Vérifier si $field est vide ou nul
+    if (!empty($field)) {
+        // Recherche de la clé
+        foreach ($field as $key => $value) {
+            if ($key === $variable) {
+                $return = $value;
+            }
+        }
+    }
+
+    return $return;
+}
+
+
+/////////
+
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
 

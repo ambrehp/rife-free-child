@@ -1,11 +1,51 @@
-<!-- Affichage d'une photo avec des informations supplémentaires -->
-<li class="photo" data-reference="<?php echo esc_attr(get_field('reference')); ?>" data-categorie="<?php echo get_the_terms($post->ID, 'categorie-photo')[0]->name; ?>">
-    <a href="<?php the_permalink(); ?>">
-        <?php the_post_thumbnail('image'); ?>
-        <!-- Superposition sur l'image pour afficher des boutons de contrôle -->
-        <div class="photo-overlay">
-            <a href="<?php echo wp_get_attachment_image_url(get_the_ID(), 'large'); ?>" class="photo-fullscreen" title="<?php the_title(); ?>"><i class="fas fa-expand"></i></a>
-            <a href="<?php the_permalink(); ?>" class="photo-details" title="<?php the_title(); ?>"><i class="fas fa-eye"></i></a>
+<?php
+$reference = get_field('reference');
+$terms = get_the_terms($post->ID, 'categorie-photo');
+$photo_image = get_field('image');
+$post_permalink = get_permalink();
+?>
+
+<div class="photo-item">
+    <div class="photo-container">
+        <div class="ligne-photos">
+            <?php
+            if ($photo_image) {
+            ?>
+                <img class="vignettes" src="<?php echo esc_url($photo_image['url']); ?>" alt="<?php echo esc_attr($photo_image['alt']); ?>">
+            <?php
+            }
+            ?>
         </div>
-    </a>
-</li>
+    </div>
+
+    <div class="calque-photo">
+        <div class="contener-fullscreen">
+            <a href="#lightbox">
+                <img class="icon-fullscreen" src="<?php echo get_template_directory_uri() . './assets/images/icon_fullscreen.png'; ?>" alt="Icône Fullscreen">
+            </a>
+        </div>
+        <div class="contener-eye">
+            <a href="<?php echo esc_url($post_permalink); ?>">
+                <img src="<?php echo get_template_directory_uri() . './assets/images/icon_eye.png'; ?>" alt="Icône oeil">
+            </a>
+        </div>
+        <div class="contener-infos">
+            <?php
+            // Afficher la référence
+            echo '<p><span id="reference">' . esc_html($reference) . '</span></p>';
+
+            // Afficher la catégorie
+            if (!empty($terms)) {
+                echo '<p><span id="categorie-photo">';
+                foreach ($terms as $term) {
+                    if ($term->parent == 3) {
+                        echo $term->name;
+                    }
+                }
+                echo '</span></p>';
+            }
+            ?>
+        </div>
+    </div>
+
+</div>
