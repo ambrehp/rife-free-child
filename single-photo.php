@@ -85,59 +85,49 @@ get_header(); ?>
 </section>
 
 
-<!-- Bloc des photos apparentées -->
-<div class="related-photos flexcolumn">
-    <h2>Vous aimerez aussi</h2>
-    <div class="related-block-photos flexrow">
-        <!-- Grille de photos -->
-        <div class="grid-photos">
-
+<!-- Dernière partie - Photos similaires -->
+<div class="similar-photo flexcolumn">
+    <h3>Vous aimerez aussi</h3>
+    <div class="block-photos">
+        <div class="block-content flexrow">
             <?php
-            // Récupérer les catégories de la publication actuelle
-            $current_post_categories = get_the_terms($post->ID, 'categorie-photo');
-            $current_category_ids = array();
+            // Récupération de la catégorie de la photo actu
+            $categories = wp_get_post_terms(get_the_ID(), 'categorie-photo');
+            // print_r($categories);
+            if ($categories && !is_wp_error($categories)) {
+                // print_r($categories);
+                $ID_categories = wp_list_pluck($categories, 'term_id');
+                // print_r($categories);
+                // Récupération de deux photos de la même catégorie
+                $photos_similaires = new WP_Query(array(
+                    'post_type' => 'photo',
+                    'posts_per_page' => 2,
+                    'post__not_in' => array(get_the_ID()),
+                    'orderby' => 'rand',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'categorie-photo',
+                            'field' => 'id',
+                            'terms' => $ID_categories,
+                        ),
+                    ),
+                ));
+                // print_r($photos_similaires);
 
-            if (!empty($current_post_categories)) {
-                foreach ($current_post_categories as $current_category) {
-                    if ($current_category->parent == 3) {
-                        // On ajoute seulement les ID des catégories enfant de la catégorie parent (id = 3)
-                        $current_category_ids[] = $current_category->term_id;
+                if ($photos_similaires->have_posts()) {
+                    while ($photos_similaires->have_posts()) {
+                        $photos_similaires->the_post();
+                        // Affichage de la photo similaire 
+                        get_template_part('templates/photo-block');
                     }
+                    wp_reset_postdata();
+                } else {
+                    // Affichage d'un message si aucune photo similaire n'est trouvée dans la même catégorie
+                    echo "Aucune photo similaire pour le moment.";
                 }
             }
-
-            $args = array(
-                'post_type' => 'image',
-                'posts_per_page' => 2,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'categorie-photo',
-                        'field' => 'id',
-                        'terms' => $current_category_ids,
-                    ),
-                ),
-                'post__not_in' => array($post->ID), // Exclure la publication actuelle
-            );
-
-
-            $query = new WP_Query($args);
-
-            if ($query->have_posts()) {
-                $count = 0;
-                while ($query->have_posts()) {
-                    $query->the_post();
-                    $count++;
             ?>
-
-
-                    <!-- Affiche les photos dynamiquement -->
-                    <?php get_template_part('templates/photo-block'); ?>
-            <?php }
-            } ?>
         </div>
-        <?php
-            wp_reset_postdata();
-        ?>
     </div>
 </div>
 
