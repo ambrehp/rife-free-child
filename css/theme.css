@@ -42,7 +42,7 @@
 h1 {
   font-family: "SpaceMono";
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 h2 {
@@ -51,7 +51,10 @@ h2 {
   font-weight: 400;
 }
 
-h3, .menu {
+h3,
+.menu,
+.h3,
+button {
   font-family: "SpaceMono";
   font-style: normal;
   font-weight: 400;
@@ -71,8 +74,8 @@ p {
 body {
   background-color: #fff !important;
   color: #000;
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 100% !important;
+  margin: 0 auto !important;
 }
 
 a {
@@ -86,11 +89,18 @@ a:hover {
 .flexrow {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .flexcolumn {
   display: flex;
   flex-direction: column;
+}
+
+.solid {
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
 }
 
 /** MENU **/
@@ -100,6 +110,7 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 10px 7rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1411764706);
 }
 
 .nav {
@@ -196,9 +207,47 @@ a:hover {
 
 /** ACCUEIL **/
 /** SINGLE **/
+.detail-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  padding: 30px 8rem 0;
+}
+
+.detail-left {
+  width: 50%;
+}
+
+.detail-left h1 {
+  font-size: 66px;
+  line-height: 1em;
+  padding-right: 24%;
+  font-weight: 400;
+}
+
+.contact-container {
+  padding-top: 20px;
+}
+
+#myBtn {
+  padding: 8px 30px;
+  border: none;
+  width: 270px;
+  height: 50px;
+  margin-left: 80px;
+  border-radius: 2px;
+  background-color: #D8D8D8;
+}
+
+#myBtn:hover {
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+}
+
 .site__navigation__prev .wp-post-image,
 .site__navigation__next .wp-post-image {
-  width: 80px;
+  width: 77px;
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }

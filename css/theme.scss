@@ -62,7 +62,7 @@ $fontPoppins: 'Poppins';
 h1 {
     font-family: $fontSpaceMono;
     font-style: italic;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 h2 {
@@ -71,7 +71,10 @@ h2 {
     font-weight: 400;
 }
 
-h3, .menu {
+h3,
+.menu,
+.h3,
+button {
     font-family: $fontSpaceMono;
     font-style: normal;
     font-weight: 400;
@@ -89,13 +92,14 @@ p {
     text-decoration: none!important;
   }
 
-  body {
+body {
     background-color: #fff!important;
     color: $noir;
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: 100%!important;
+    margin: 0 auto!important;
   }
-  a {
+
+a {
     text-decoration: none;
     color: $noir;
         &:hover {
@@ -103,14 +107,21 @@ p {
     }
   }
 
-  .flexrow {
+.flexrow {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 .flexcolumn {
     display: flex;
     flex-direction: column;
+}
+
+.solid {
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
 }
 
   /** MENU **/ 
@@ -121,6 +132,7 @@ p {
     display: flex;
     align-items: center;
     padding: 10px 7rem;
+    box-shadow: 0 5px 10px #00000024;
   }
   .nav {
    .nav-header {
@@ -260,9 +272,45 @@ p {
 /** ACCUEIL **/
 
 /** SINGLE **/
+
+.detail-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 30px 8rem 0;
+}
+
+.detail-left {
+    width: 50%;
+}
+.detail-left h1 {
+    font-size: 66px;
+    line-height: 1em;
+    padding-right: 24%;
+    font-weight: 400;
+}
+
+.contact-container {
+    padding-top: 20px;
+}
+#myBtn {
+    padding: 8px 30px;
+    border: none;
+    width: 270px;
+    height: 50px;
+    margin-left: 80px;
+    border-radius: 2px;
+    background-color: #D8D8D8;
+}
+#myBtn:hover {
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+}
+
 .site__navigation__prev .wp-post-image,
 .site__navigation__next .wp-post-image {
-    width: 80px;
+    width: 77px;
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }

@@ -5,7 +5,7 @@ Theme Name: rife-free-child
 Theme URI: https://example.com/
 description: a child theme of the rife-free theme
 Author: John Doe
-Author URI: https://example.com
+Author URI: https://example.com.detail-left
 Template: rife-free
 Version: 1.0
 */
