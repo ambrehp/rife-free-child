@@ -245,6 +245,10 @@ a:hover {
   color: #fff;
 }
 
+.arrow-navigation {
+  margin-right: 30px;
+}
+
 .site__navigation__prev .wp-post-image,
 .site__navigation__next .wp-post-image {
   width: 77px;
@@ -255,6 +259,31 @@ a:hover {
 .site__navigation__prev:hover img,
 .site__navigation__next:hover img {
   opacity: 1;
+}
+
+.attachment-80x70.size-80x70.wp-post-image {
+  margin: 0 -50px 20px 0;
+}
+
+.similar-photo {
+  padding: 70px 0;
+}
+
+.block-photos {
+  padding-top: 30px;
+}
+
+.block-content {
+  gap: 20px;
+}
+
+.icon-fullscreen {
+  width: 34px;
+  height: 34px;
+}
+
+.ref-container {
+  text-transform: uppercase;
 }
 
 /** FOOTER **/

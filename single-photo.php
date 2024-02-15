@@ -48,7 +48,7 @@ get_header(); ?>
                 </div>
 
                 <!-- Navigation entre chaque post -->
-                <div class="flexrow">
+                <div class="arrow-navigation flexrow">
                     <div class="site__navigation__prev">
                         <?php
                         $prev_post = get_previous_post();
@@ -88,8 +88,8 @@ get_header(); ?>
             </article>
 
             <!-- Photos apparentées -->
-            <article class="detail-container similar-photo flexcolumn">
-                <h3>Vous aimerez aussi</h3>
+            <article class="similar-photo flexcolumn">
+                <h3 class="h3">Vous aimerez aussi</h3>
                 <div class="block-photos">
                     <div class="block-content flexrow">
                         <?php
