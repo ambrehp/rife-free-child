@@ -4,6 +4,19 @@
     margin: 45% auto;
     height: 50vh;
   }
+  /** single **/
+  .detail-left {
+    margin-right: 5%;
+  }
+  .detail-left h1 {
+    font-size: 40px;
+  }
+  .detail-right img {
+    width: 100%;
+  }
+  .autre-categorie {
+    width: 35vw;
+  }
 }
 @media (min-width: 768px) {
   .burger-icon,
@@ -12,6 +25,11 @@
   }
 }
 @media (max-width: 768px) {
+  /** General **/
+  .flexrow {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
   /** popup **/
   .modal-content {
     width: 80%;
@@ -19,6 +37,23 @@
   /** MENU **/
   .nav {
     padding: 10px 2rem;
+  }
+  /** single **/
+  .detail-container {
+    padding: 30px 3rem 0;
+  }
+  .detail-left {
+    width: 100%;
+  }
+  .detail-left h1 {
+    font-size: 35px;
+  }
+  #myBtn {
+    width: 200px;
+    margin-left: 44px;
+  }
+  .autre-categorie {
+    width: 43vw;
   }
 }
 @media (max-width: 480px) {

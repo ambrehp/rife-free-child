@@ -20,6 +20,20 @@ $gris-clair: #E5E5E5;
     margin: 45% auto;
     height: 50vh;
   }
+
+  /** single **/
+  .detail-left {
+    margin-right: 5%;
+  }
+  .detail-left h1 {
+    font-size: 40px;
+  }
+  .detail-right img {
+    width: 100%;
+  }
+  .autre-categorie {
+    width: 35vw;
+  }
 }
 
 
@@ -31,7 +45,11 @@ $gris-clair: #E5E5E5;
 }
 
 @media (max-width:768px) {
-
+  /** General **/
+  .flexrow {
+    flex-wrap: wrap;
+    flex-direction: column-reverse
+  }
     /** popup **/
     .modal-content {
       width: 80%;
@@ -41,6 +59,27 @@ $gris-clair: #E5E5E5;
 .nav {
     padding: 10px 2rem;
   }
+
+  /** single **/
+  .detail-container {
+    padding: 30px 3rem 0;
+  }
+  .detail-left {
+    width: 100%;
+  }
+  .detail-left h1 {
+    font-size: 35px;
+}
+
+  #myBtn {
+    width: 200px;
+    margin-left: 44px;
+  }
+
+  .autre-categorie {
+    width: 43vw;
+  }
+  
 }
 
 

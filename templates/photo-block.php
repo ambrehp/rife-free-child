@@ -30,25 +30,12 @@ if ($categories && !is_wp_error($categories)) {
 
 <!-- Affichage du bloc photo -->
 <div class="autres-photos">
-    <div class="">
-        <?php
-        if ($photo_image_id) {
-            $photo_image_url = wp_get_attachment_image_src($photo_image_id, 'desktop-home'); // Récupérer l'URL de l'image
-            if ($photo_image_url) {
-                $photo_image_url = $photo_image_url[0]; // L'URL de l'image se trouve à l'index 0 du tableau retourné
-                echo '<img src="' . esc_url($photo_image_url) . '" alt="Photo">';
-            }
-        }
-        ?>
-    </div>
+    <div class="hover-photo">
+        <div class="fullscreen-container">
+            <a href="#lightbox">
+                <img class="icon-fullscreen" src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_fullscreen.png'; ?>" alt="Icon Fullscreen">
+            </a>
 
-    <div class="survol-photo">
-        <div class="structuration-survol-photo">
-            <div class="fullscreen-container">
-                <a href="#lightbox">
-                    <img class="icon-fullscreen" src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_fullscreen.png'; ?>" alt="Icon Fullscreen">
-                </a>
-            </div>
             <div class="eye-container">
                 <a href="<?php echo esc_url($post_permalink); ?>">
                     <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_eye.png'; ?>" alt="Icon oeil">
@@ -71,5 +58,15 @@ if ($categories && !is_wp_error($categories)) {
                 </div>
             </div>
         </div>
+
+        <?php
+        if ($photo_image_id) {
+            $photo_image_url = wp_get_attachment_image_src($photo_image_id, 'desktop-home'); // Récupérer l'URL de l'image
+            if ($photo_image_url) {
+                $photo_image_url = $photo_image_url[0]; // L'URL de l'image se trouve à l'index 0 du tableau retourné
+                echo '<img class="autre-categorie" src="' . esc_url($photo_image_url) . '" alt="Photo">';
+            }
+        }
+        ?>
     </div>
 </div>
