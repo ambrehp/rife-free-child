@@ -48,7 +48,7 @@ get_header(); ?>
                 </div>
 
                 <!-- Navigation entre chaque post -->
-                <div class="arrow-navigation flexrow">
+                <div class="arrow-navigation">
                     <div class="site__navigation__prev">
                         <?php
                         $prev_post = get_previous_post();

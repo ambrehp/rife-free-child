@@ -14,11 +14,22 @@ $gris-medium: #D8D8D8;
 $gris-clair: #E5E5E5;
 
 
+@media (max-width:1440px) {
+  /** popup **/
+  .modal-content {
+    height: 120vh;
+  }
+}
+
 @media (max-width:1024px) {
     /** popup **/
   .modal-content {
-    margin: 45% auto;
-    height: 50vh;
+    margin: 10% auto;
+    height: 125vh;
+    width: 70%;
+  }
+  #wpforms-56 {
+    margin: 3rem 2rem;
   }
 
   /** single **/
@@ -48,7 +59,8 @@ $gris-clair: #E5E5E5;
   /** General **/
   .flexrow {
     flex-wrap: wrap;
-    flex-direction: column-reverse
+    flex-direction: column-reverse;
+    align-items: center;
   }
     /** popup **/
     .modal-content {
@@ -61,8 +73,9 @@ $gris-clair: #E5E5E5;
   }
 
   /** single **/
+  /* Section détail photo */
   .detail-container {
-    padding: 30px 3rem 0;
+    padding: 30px 2rem 0;
   }
   .detail-left {
     width: 100%;
@@ -71,13 +84,21 @@ $gris-clair: #E5E5E5;
     font-size: 35px;
 }
 
+/* Section contact */
+.contact-container {
+  flex-direction: column;
+}
   #myBtn {
     width: 200px;
-    margin-left: 44px;
+    margin-left: 30vw;
+  }
+  .arrow-navigation {
+    justify-content: space-between;
   }
 
+  /* Photos apparentées */
   .autre-categorie {
-    width: 43vw;
+    width: 90vw;
   }
   
 }
@@ -89,7 +110,7 @@ $gris-clair: #E5E5E5;
     margin: 3rem;
 }
   .modal-content {
-  height: 45vh;
+  height: 115vh;
 }
 
   /** MENU **/
@@ -142,5 +163,48 @@ $gris-clair: #E5E5E5;
 .nav-list.open {
   left: 100%!important;
   padding: 0;
+}
+
+ /** single **/
+  /* Section contact */
+  .contact-container {
+    gap: 20px;
+  }
+  .text {
+    text-align: center;
+  }
+  #myBtn {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .arrow-navigation {
+    justify-content: center;
+}
+.site__navigation__prev {
+  margin-right: 30px;
+}
+.site__navigation__next {
+  margin-left: 30px;
+}
+
+/* Photos apparentées */
+.autre-categorie {
+  width: 80vw;
+}
+
+/** FOOTER **/
+#footer {
+  flex-direction: column;
+  align-items: center;
+}
+.menu-menu-footer-container {
+  margin: 0;
+}
+#footer-menu {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin-bottom: 0;
 }
 }
