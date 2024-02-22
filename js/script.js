@@ -36,41 +36,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   jQuery(function ($) {
     // Récupère le bouton contact
-    let btn = document.getElementById("myBtn");
-    const btnMenu = document.querySelector(".popup-link");
+    let btn = $("#myBtn");
+
+    // Récupère le lien du menu
+    const btnMenu = $(".popup-link");
 
     // Récupère le container de la modal
-    let modal = document.getElementById("myModal");
+    let modal = $("#myModal");
 
     // Récupère <span> qui ferme la modal
-    let span = document.getElementsByClassName("close")[0];
+    let span = $(".close")[0];
 
     // Fonction pour ouvrir la modal
     function openModal() {
-      modal.style.display = "block";
+      modal.css("display", "block");
     }
 
     // Fonction pour fermer la modal
     function closeModal() {
-      modal.style.display = "none";
+      modal.css("display", "none");
     }
 
     // Quand l'utilisateur clique sur le bouton contact ou le lien du menu, ouvre la modal
-    btn.onclick = btnMenu.onclick = function () {
-      openModal();
-    };
+    btn.click(openModal);
+    btnMenu.click(openModal);
 
     // Quand l'utilisateur clique sur <span> (x), ferme la modal
-    span.onclick = function () {
-      closeModal();
-    };
+    $(span).click(closeModal);
 
     // Quand l'utilisateur clique en dehors de la modal, ferme la modal
-    window.onclick = function (event) {
-      if (event.target == modal) {
+    $(window).click(function (event) {
+      if ($(event.target).is(modal)) {
         closeModal();
       }
-    };
+    });
 
     ///// Ajout Réf au formulaire Contact
     $("#myBtn, .popup-link").on("click", function (e) {

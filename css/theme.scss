@@ -176,10 +176,12 @@ a {
     background-color: #000;
   }
 
+
+/* Modal Content/Box */
 .modal {
     display: none;
     position: fixed;
-    z-index: 10; 
+    z-index: 999; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -189,7 +191,6 @@ a {
     background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content/Box */
 .modal-content {
     background-color: #fff;
     margin: 15% auto;
