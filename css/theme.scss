@@ -127,6 +127,8 @@ a {
   /** MENU **/ 
   
   .nav {
+    position: relative;
+    z-index: 999;
     width: 100%;
     background-color: #fff;
     display: flex;

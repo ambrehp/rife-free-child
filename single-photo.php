@@ -43,7 +43,7 @@ get_header(); ?>
             <article class="contact-container solid">
                 <div class="contact-content flexrow">
                     <p class="text">Cette photo vous intéresse ?
-                        <button id="myBtn" data-reference="<?php the_field('reference'); ?>">Contact</button>
+                        <button id="myBtn" type="button" data-reference="<?php the_field('reference'); ?>">Contact</button>
                     </p>
                 </div>
 
