@@ -78,6 +78,6 @@ add_theme_support('post-thumbnails');
 //      'medium_large' : resolution (768 x 0 infinite height)
 //      'large' : 1024 x 1024 max height 1024px
 //      'full' : original size uploaded
-add_image_size('hero', 1440, 962, true);
+add_image_size('hero', 1440, 960, true);
 add_image_size('desktop-home', 600, 520, true);
 add_image_size('lightbox', 1300, 900, true);

@@ -15,7 +15,7 @@ wp_footer();
     ));
     ?>
     <div>
-        <p> <b>TOUS DROITS RÉSERVÉS</b> </p>
+        <span>TOUS DROITS RÉSERVÉS </span>
     </div>
 </div>
 
