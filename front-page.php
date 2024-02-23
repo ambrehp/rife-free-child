@@ -39,7 +39,7 @@
 </div>
 
 <!-- Intégration liste photo -->
-<div class="photo-grid">
+<div class="photo-grid flexrow">
     <?php
     $args = array(
         'post_type' => 'photo',
@@ -65,9 +65,9 @@
     ?>
 </div>
 
-<div class="load-more-container">
+<div id="pagination-container">
     <div class="load-more">
-        <button class="btn-more" data-page="2" data-max-pages="<?php echo $query_grid->max_num_pages; ?>" data-nonce="<?php echo wp_create_nonce('load_more_photos'); ?>">
+        <button class="myBtn" data-page="2" data-max-pages="<?php echo $query_grid->max_num_pages; ?>" data-nonce="<?php echo wp_create_nonce('load_more_photos'); ?>">
             Charger plus
         </button>
     </div>

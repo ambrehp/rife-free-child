@@ -30,7 +30,7 @@ if ($categories && !is_wp_error($categories)) {
 
 <!-- Affichage du bloc photo -->
 <div class="autres-photos">
-    <div class="hover-photo">
+    <div class="hover-photo lightbox">
         <div class="fullscreen-container">
             <a href="#lightbox">
                 <img class="icon-fullscreen" src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_fullscreen.png'; ?>" alt="Icon Fullscreen">
