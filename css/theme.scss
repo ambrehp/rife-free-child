@@ -5,7 +5,6 @@
          => Font
          => flexrow
          => flexcolumn
-         => Photo apparentées
 
         MENU
         POPUP
@@ -140,74 +139,12 @@ a {
 //     position: relative;
 // }
 
-/* Photos apparentées */
-.attachment-80x70.size-80x70.wp-post-image {
-    margin: 0 -50px 20px 0;
-}
-
-.similar-photo {
-    padding: 70px 0;
-}
-
-.block-photos {
-    padding-top: 30px;
-}
-.block-content {
-    gap: 20px;
-}
-
-.hover-photo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #000000;
+/* Block-photo commun */
+.autres-photos img {
+    overflow: hidden;
+    object-fit: cover;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-.thumbnail {
-    width: 100%;
-    height: 100%;
-}
-.icon-fullscreen {
-    width: 34px;
-    height: 34px;
-}
-.eye-container {
-    // position: absolute;
-    cursor: pointer;
-    width: 46px;
-    height: 46px;
-    left: 70%;
-    top: 230vh;
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
-
-.ref-container {
-    text-transform: uppercase;
-    // position: absolute;
-    bottom: 10px;
-    // color: #FFFFFF;
-    font-size: 14px;
-
-
-    .survol-reference {
-        font-family: $fontPoppins;
-        font-weight: 500;
-        line-height: 21px;
-        opacity: 0;
-        z-index: 5;
-        transition: all 0.5s ease-in-out;
-    }
-    .cat-container {
-        font-family: $fontSpaceMono;
-        font-weight: 500;
-        
-    }
 }
 
   /** MENU **/ 
@@ -352,15 +289,104 @@ a {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto 20px;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
 
     .autres-photos  {
-        width: 565px;
+        width: 600px;
         height: 500px;
         margin: 0 10px 20px;
+    }
+}
+
+/* Block-photo */
+.attachment-80x70.size-80x70.wp-post-image {
+    margin: 0 -50px 20px 0;
+}
+
+.similar-photo {
+    padding: 70px 0;
+}
+
+.block-photos {
+    padding-top: 30px;
+}
+.block-content {
+    gap: 20px;
+}
+
+.hover-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.thumbnail {
+    width: 100%;
+    height: 100%;
+}
+.photo-grid .icon-fullscreen {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 150vh;
+    right: 51vw;
+    transition: all 1s ease-in-out;
+    // opacity: 0;
+}
+.photo-grid .icon-fullscreen:hover {
+    opacity: 1;
+}
+
+.photo-grid .eye-container {
+    position: absolute;
+    cursor: pointer;
+    left: 55vh;
+    top: 180vh;
+    transform: translate3d(-50%, -50%, 0);
+    // opacity: 0;
+    transition: all 1s ease-in-out;
+
+    .icon-eye {
+        width: 46px;
+        height: 31px;
+    }
+}
+
+.photo-grid .ref-container {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 14px;
+
+
+    .ref-info {
+        position: absolute;
+        font-family: $fontPoppins;
+        font-weight: 500;
+        line-height: 21px;
+        // opacity: 0;
+        z-index: 5;
+        transition: all 0.5s ease-in-out;
+        top: 208vh;
+        left: 9vw;
+    }
+    .cat-info {
+        font-family: $fontSpaceMono;
+        font-weight: 500;
+        position: absolute;
+        top: 208vh;
+        right: 50vw;
+        // opacity: 0;
+        z-index: 5;
+        transition: all 0.5s ease-in-out;
     }
 }
 
@@ -430,6 +456,70 @@ a {
 .site__navigation__next:hover img {
     opacity: 1;
 }
+
+/* Section catégories apparentées */
+.block-photos {
+    .fullscreen-container {
+        position: absolute;
+        cursor: pointer;
+        top: 175vh;
+        right: 52vw;
+        transition: all 1s ease-in-out;
+        // opacity: 0;
+    
+        .icon-fullscreen {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    .eye-container {
+        position: absolute;
+        cursor: pointer;
+        left: 54vh;
+        top: 210vh;
+        transform: translate3d(-50%, -50%, 0);
+        // opacity: 0;
+        transition: all 1s ease-in-out;
+    
+        .icon-eye {
+            width: 46px;
+            height: 31px;
+        }
+    }
+
+    .ref-container {
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: 14px;
+        position: absolute;
+        top: 238vh;
+    
+    
+        .ref-info {
+            position: absolute;
+            font-family: $fontPoppins;
+            font-weight: 500;
+            line-height: 21px;
+            // opacity: 0;
+            z-index: 5;
+            transition: all 0.5s ease-in-out;
+            left: 2vw;
+        }
+        .cat-info {
+            font-family: $fontSpaceMono;
+            font-weight: 500;
+            position: absolute;
+            // top: 208vh;
+            right: 2vw;
+            // opacity: 0;
+            z-index: 5;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+
 
 /** FOOTER **/
 #footer {

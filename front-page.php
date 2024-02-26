@@ -38,6 +38,14 @@
     </div>
 </div>
 
+<!-- Chargement des filtres -->
+
+<?php
+// On réinitialise à la requête principale
+wp_reset_postdata();
+?>
+
+
 <!-- Intégration liste photo -->
 <div class="photo-grid flexrow">
     <?php
@@ -57,7 +65,7 @@
             $count++;
     ?>
 
-            <!-- Affiche les photos dynamiquement -->
+            <!-- Récupère les photos pour les afficher dynamiquement -->
             <?php get_template_part('templates/photo-block'); ?>
     <?php
         }
@@ -73,8 +81,5 @@
     </div>
 </div>
 
-<?php
-// On réinitialise à la requête principale
-wp_reset_postdata();
-?>
+
 <?php get_footer(); ?>

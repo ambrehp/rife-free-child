@@ -31,25 +31,26 @@ if ($categories && !is_wp_error($categories)) {
 <!-- Affichage du bloc photo -->
 <div class="autres-photos">
     <div class="hover-photo lightbox">
-        <div class="fullscreen-container">
-            <a href="#lightbox">
-                <img class="icon-fullscreen" src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_fullscreen.png'; ?>" alt="Icon Fullscreen">
-            </a>
-
+        <div class="info-container">
+            <div class="fullscreen-container">
+                <a href="#lightbox">
+                    <img class="icon-fullscreen" src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_fullscreen.png'; ?>" alt="Icon Fullscreen">
+                </a>
+            </div>
             <div class="eye-container">
                 <a href="<?php echo esc_url($post_permalink); ?>">
-                    <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_eye.png'; ?>" alt="Icon oeil">
+                    <img class="icon-eye" src="<?php echo get_stylesheet_directory_uri() . './assets/images/icon_eye.png'; ?>" alt="Icon oeil">
                 </a>
             </div>
             <div class="ref-container">
-                <div class="survol-reference">
+                <div class="ref-info">
 
                     <?php
                     //Afficher la référence
                     echo $reference_photo ?>
                 </div>
                 <!-- Vérifier si $liste_categories est définie avant de l'utiliser -->
-                <div class="cat-container">
+                <div class="cat-info">
                     <?php
                     if (isset($liste_categories)) {
                         //Afficher la catégorie

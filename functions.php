@@ -71,6 +71,10 @@ function my_acf_load_value($variable, $field)
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
 
+// permet de définir la taille des images mises en avant 
+// set_post_thumbnail_size(largeur, hauteur max, true = on adapte l'image aux dimensions)
+set_post_thumbnail_size(600, 0, false);
+
 // Définir d'autres tailles d'images : 
 // les options de base WP : 
 //      'thumbnail': 150 x 150 hard cropped 
