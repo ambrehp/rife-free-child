@@ -6,6 +6,7 @@
         => Font
         => flexrow
         => flexcolumn
+        => Photo apparentées
 
        MENU
        POPUP
@@ -155,7 +156,6 @@ a:hover {
 }
 
 .eye-container {
-  position: absolute;
   cursor: pointer;
   width: 46px;
   height: 46px;
@@ -168,13 +168,11 @@ a:hover {
 
 .ref-container {
   text-transform: uppercase;
-  position: absolute;
   bottom: 10px;
-  color: #FFFFFF;
   font-size: 14px;
 }
 .ref-container .survol-reference {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   font-weight: 500;
   line-height: 21px;
   opacity: 0;
@@ -182,6 +180,7 @@ a:hover {
   transition: all 0.5s ease-in-out;
 }
 .ref-container .cat-container {
+  font-family: "SpaceMono";
   font-weight: 500;
 }
 
@@ -424,5 +423,5 @@ a:hover {
 
 .menu {
   text-transform: uppercase;
-  font-family: "SpaceMono", sans-serif;
+  font-family: "SpaceMono";
 }

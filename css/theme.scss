@@ -5,7 +5,8 @@
          => Font
          => flexrow
          => flexcolumn
-         
+         => Photo apparentées
+
         MENU
         POPUP
         ACCUEIL
@@ -175,7 +176,7 @@ a {
     height: 34px;
 }
 .eye-container {
-    position: absolute;
+    // position: absolute;
     cursor: pointer;
     width: 46px;
     height: 46px;
@@ -188,14 +189,14 @@ a {
 
 .ref-container {
     text-transform: uppercase;
-    position: absolute;
+    // position: absolute;
     bottom: 10px;
-    color: #FFFFFF;
+    // color: #FFFFFF;
     font-size: 14px;
 
 
     .survol-reference {
-        font-family: 'Poppins', sans-serif;
+        font-family: $fontPoppins;
         font-weight: 500;
         line-height: 21px;
         opacity: 0;
@@ -203,7 +204,7 @@ a {
         transition: all 0.5s ease-in-out;
     }
     .cat-container {
-        
+        font-family: $fontSpaceMono;
         font-weight: 500;
         
     }
@@ -448,5 +449,5 @@ a {
     }
     .menu {
         text-transform: uppercase;
-        font-family: 'SpaceMono', sans-serif;
+        font-family: $fontSpaceMono;
     }
