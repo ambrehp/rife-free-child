@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<!-- Chargement des filtres -->
+<!-- Intégration des filtres -->
 
 <?php
 // On réinitialise à la requête principale

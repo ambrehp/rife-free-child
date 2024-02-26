@@ -83,5 +83,5 @@ set_post_thumbnail_size(600, 0, false);
 //      'large' : 1024 x 1024 max height 1024px
 //      'full' : original size uploaded
 add_image_size('hero', 1440, 960, true);
-add_image_size('desktop-home', 600, 520, true);
+add_image_size('desktop-home', 600, 600, true);
 add_image_size('lightbox', 1300, 900, true);

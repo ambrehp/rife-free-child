@@ -62,7 +62,7 @@ if ($categories && !is_wp_error($categories)) {
 
         <?php
         if ($photo_image_id) {
-            $photo_image_url = wp_get_attachment_image_src($photo_image_id, 'desktop-home'); // Récupérer l'URL de l'image
+            $photo_image_url = wp_get_attachment_image_src($photo_image_id, 'desktop-home'); // Récupérer l'URL de l'image par son ID
             if ($photo_image_url) {
                 $photo_image_url = $photo_image_url[0]; // L'URL de l'image se trouve à l'index 0 du tableau retourné
                 echo '<img class="autre-categorie" src="' . esc_url($photo_image_url) . '" alt="Photo">';
