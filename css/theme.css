@@ -309,7 +309,7 @@ a:hover {
   height: 34px;
   position: absolute;
   cursor: pointer;
-  top: 150vh;
+  top: 144vh;
   right: 51vw;
   transition: all 1s ease-in-out;
 }
@@ -322,7 +322,7 @@ a:hover {
   position: absolute;
   cursor: pointer;
   left: 55vh;
-  top: 180vh;
+  top: 184vh;
   transform: translate3d(-50%, -50%, 0);
   transition: all 1s ease-in-out;
 }
@@ -343,15 +343,15 @@ a:hover {
   line-height: 21px;
   z-index: 5;
   transition: all 0.5s ease-in-out;
-  top: 208vh;
-  left: 9vw;
+  top: 220vh;
+  left: 8vw;
 }
 .photo-grid .ref-container .cat-info {
   font-family: "SpaceMono";
   font-weight: 500;
   position: absolute;
-  top: 208vh;
-  right: 50vw;
+  top: 220vh;
+  right: 51vw;
   z-index: 5;
   transition: all 0.5s ease-in-out;
 }

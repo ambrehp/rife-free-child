@@ -337,7 +337,7 @@ a {
     height: 34px;
     position: absolute;
     cursor: pointer;
-    top: 150vh;
+    top: 144vh;
     right: 51vw;
     transition: all 1s ease-in-out;
     // opacity: 0;
@@ -350,7 +350,7 @@ a {
     position: absolute;
     cursor: pointer;
     left: 55vh;
-    top: 180vh;
+    top: 184vh;
     transform: translate3d(-50%, -50%, 0);
     // opacity: 0;
     transition: all 1s ease-in-out;
@@ -375,15 +375,15 @@ a {
         // opacity: 0;
         z-index: 5;
         transition: all 0.5s ease-in-out;
-        top: 208vh;
-        left: 9vw;
+        top: 220vh;
+        left: 8vw;
     }
     .cat-info {
         font-family: $fontSpaceMono;
         font-weight: 500;
         position: absolute;
-        top: 208vh;
-        right: 50vw;
+        top: 220vh;
+        right: 51vw;
         // opacity: 0;
         z-index: 5;
         transition: all 0.5s ease-in-out;

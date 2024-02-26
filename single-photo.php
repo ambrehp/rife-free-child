@@ -21,8 +21,8 @@ get_header(); ?>
                 <div class="detail-left solid">
                     <h1> <?php the_title(); ?></h1>
                     <p class="h3">RÉFÉRENCE : <?php the_field('reference'); ?></p>
-                    <p class="h3">CATÉGORIE : <?php echo get_the_term_list(get_the_ID(), 'categorie-photo'); ?></p>
-                    <p class="h3">FORMAT : <?php echo get_the_term_list(get_the_ID(), 'format-photo'); ?></p>
+                    <p class="h3">CATÉGORIE : <?php echo get_the_term_list(get_the_ID(), 'filtres-categories'); ?></p>
+                    <p class="h3">FORMAT : <?php echo get_the_term_list(get_the_ID(), 'filtres-formats'); ?></p>
                     <p class="h3">TYPE : <?php the_field('type'); ?></p>
                     <p class="h3">ANNÉE : <?php the_field('annee'); ?></p>
                 </div>
@@ -94,7 +94,7 @@ get_header(); ?>
                     <div class="block-content flexrow">
                         <?php
                         // Récupération de la catégorie de la photo actu
-                        $categories = wp_get_post_terms(get_the_ID(), 'categorie-photo');
+                        $categories = wp_get_post_terms(get_the_ID(), 'filtres-categories');
 
                         if ($categories && !is_wp_error($categories)) {
                             $ID_categories = wp_list_pluck($categories, 'term_id');
@@ -107,7 +107,7 @@ get_header(); ?>
                                 'orderby' => 'rand',
                                 'tax_query' => array(
                                     array(
-                                        'taxonomy' => 'categorie-photo',
+                                        'taxonomy' => 'filtres-categories',
                                         'field' => 'id',
                                         'terms' => $ID_categories,
                                     ),

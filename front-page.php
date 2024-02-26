@@ -38,7 +38,40 @@
     </div>
 </div>
 
-<!-- Intégration des filtres -->
+<!-- Intégration des filtres et tri -->
+<div class="select-container">
+    <div class="filtre-container">
+        <?php
+        //* Nouvelle instance wp_query pour recuperer les filtres (taxonomies année)
+        $args_filters = array(
+            'post_type' => 'photo',
+            'posts_per_page' => -1,
+        );
+        ?>
+        <select id="filtre-categorie">
+            <?php
+            // Récupérer les termes de la taxonomie "catégorie"
+            $filtres_categories = get_terms('filtres-categories');
+            ?>
+            <option value="categorie">Catégories</option>
+        </select>
+
+        <select id="filtre-format">
+            <?php
+            // Récupérer les termes de la taxonomie "format"
+            $filtres_formats = get_terms('filtres-formats');
+            ?>
+            <option value="format">Formats</option>
+        </select>
+    </div>
+    <div class="tri-container">
+        <select id="annee">
+            <option value="">Trier par</option>
+            <option value="asc">A partir des plus récentes</option>
+            <option value="desc">A partir des plus anciennes</option>
+        </select>
+    </div>
+</div>
 
 <?php
 // On réinitialise à la requête principale

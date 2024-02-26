@@ -2,7 +2,7 @@
     "key": "taxonomy_65ba8ff7d480e",
     "title": "formats",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "taxonomy": "format-photo",
     "object_type": [
         "info_photo"
@@ -71,5 +71,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1706874168
+    "modified": 1708968204
 }

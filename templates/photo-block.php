@@ -3,10 +3,10 @@
 $post_permalink = get_permalink();
 $photo_image_id  = get_field('image');
 $reference_photo = get_field('reference');
-$terms = get_the_terms($post->ID, 'categorie-photo');
+$terms = get_the_terms($post->ID, 'filtres-categories');
 
 // Récupération du format de la photo et filtrage
-$formats = get_the_terms(get_the_ID(), 'formats-photo');
+$formats = get_the_terms(get_the_ID(), 'filtres-formats');
 if ($formats && !is_wp_error($formats)) {
     $noms_formats = array();
     foreach ($formats as $format) {
@@ -16,7 +16,7 @@ if ($formats && !is_wp_error($formats)) {
 }
 
 // Récupération de la catégorie de la photo et filtrage
-$categories = get_the_terms(get_the_ID(), 'categorie-photo');
+$categories = get_the_terms(get_the_ID(), 'filtres-categories');
 if ($categories && !is_wp_error($categories)) {
     $noms_categories = array();
     foreach ($categories as $categorie) {
