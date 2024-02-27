@@ -39,8 +39,8 @@
 </div>
 
 <!-- Intégration des filtres et tri -->
-<div class="select-container">
-    <div class="filtre-container">
+<div class="select-container flexrow">
+    <div class="filtre-container flexrow">
         <?php
         //* Nouvelle instance wp_query pour recuperer les filtres (taxonomies année)
         $args_filters = array(
@@ -53,7 +53,7 @@
             // Récupérer les termes de la taxonomie "catégorie"
             $filtres_categories = get_terms('filtres-categories');
             ?>
-            <option value="categorie">Catégories</option>
+            <option id="categorie" value="categorie">Catégories</option>
         </select>
 
         <select id="filtre-format">
@@ -61,14 +61,14 @@
             // Récupérer les termes de la taxonomie "format"
             $filtres_formats = get_terms('filtres-formats');
             ?>
-            <option value="format">Formats</option>
+            <option id="format" value="format">Formats</option>
         </select>
     </div>
     <div class="tri-container">
         <select id="annee">
             <option value="">Trier par</option>
-            <option value="asc">A partir des plus récentes</option>
-            <option value="desc">A partir des plus anciennes</option>
+            <option value="ASC">A partir des plus récentes</option>
+            <option value="DESC">A partir des plus anciennes</option>
         </select>
     </div>
 </div>
@@ -84,7 +84,7 @@ wp_reset_postdata();
     <?php
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => 16,
+        'posts_per_page' => 8,
         'order' => 'ASC',
         'orderby' => 'date',
     );

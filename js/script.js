@@ -84,5 +84,76 @@ document.addEventListener("DOMContentLoaded", function () {
       // Ouvre le formulaire
       $("#wpforms-56").show();
     });
+
+    /////////////////////////////////////////
+    //////////////////////////////////////////
+
+    /// intégration pagination btn "charger plus"
+    jQuery(document).ready(function ($) {
+      $(".myBtn").click(function () {
+        // Valeurs sélectionnées
+        const button = $(this);
+        const page = button.data("page");
+        const maxPages = button.data("max-pages");
+        const nonce = button.data("nonce");
+        const container = $(".photo-grid");
+        const annee = $("#annee").val();
+        const categories = $("#filtre-categorie").val();
+        const formats = $("#filtre-format").val();
+
+        if (page <= maxPages) {
+          $.ajax({
+            url: custom_script_vars.ajaxurl,
+            type: "post",
+            data: {
+              action: "load_more_photos",
+              nonce: nonce,
+              page: page,
+              sortOrder: annee,
+              categories: categories,
+              formats: formats,
+            },
+            success: function (response) {
+              container.append(response);
+              button.data("page", page++);
+              if (page >= maxPages) {
+                button.hide();
+              }
+              initLightbox();
+            },
+          });
+        }
+      });
+    });
+
+    ///Ajout filtres et tri
+    $(".filtre-container select").on("change", function () {
+      // Récupérer les valeurs des filtres
+      const categories = $("#filtre-categorie").val();
+      const formats = $("#filtre-format").val();
+      const annee = $("#annee").val();
+      const button = $(".myBtn");
+
+      // Récupérer le nonce (jeton de sécurité)
+      const nonce = custom_script_vars.nonce;
+
+      // Envoyez une requête AJAX
+      $.ajax({
+        url: custom_script_vars.ajaxurl, // URL de l'action AJAX
+        type: "POST",
+        data: {
+          action: "filter_photos",
+          nonce: nonce,
+          categories: categories,
+          formats: formats,
+          sortOrder: annee,
+        },
+        success: function (response) {
+          button.show();
+          $(".photo-grid").html(response);
+          initLightbox();
+        },
+      });
+    });
   });
 });
