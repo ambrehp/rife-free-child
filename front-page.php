@@ -68,10 +68,13 @@
         <select id="annee">
             <option value="">Trier par</option>
             <option value="ASC">A partir des plus récentes</option>
-            <option value="DESC">A partir des plus anciennes</option>
+            <option value="DEC">A partir des plus anciennes</option>
         </select>
     </div>
 </div>
+
+
+
 
 <?php
 // On réinitialise à la requête principale
@@ -84,7 +87,7 @@ wp_reset_postdata();
     <?php
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => 8,
+        'posts_per_page' => 16,
         'order' => 'ASC',
         'orderby' => 'date',
     );
@@ -108,7 +111,7 @@ wp_reset_postdata();
 
 <div id="pagination-container">
     <div class="load-more">
-        <button class="myBtn" data-page="2" data-max-pages="<?php echo $query_grid->max_num_pages; ?>" data-nonce="<?php echo wp_create_nonce('load_more_photos'); ?>">
+        <button class="myBtn" data-page="2" data-max-pages="<?php echo $query_grid->max_num_pages; ?>" data-postid="<?php echo get_the_ID(); ?>" data-nonce="<?php echo wp_create_nonce('load_more_photos'); ?>" data-action="load_more_photos" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>">
             Charger plus
         </button>
     </div>
